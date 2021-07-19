@@ -1,3 +1,5 @@
 function shout() {
-    alert("Hallo, ig bis :)");
-  }
+    alert("auso\nserigi do\nund do\nund dooo?");
+}
+
+
