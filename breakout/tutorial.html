@@ -5,7 +5,7 @@
         <title>Swans Breakout</title>
         <style>
             * { padding: 10; margin: 10; }
-            canvas { background: rgb(11, 3, 87); display: block; margin: 0 auto; }
+            canvas { background: gray; display: block; margin: 0 auto; }
         </style>
     </head>
     <body>
@@ -87,7 +87,7 @@
             function drawBall() {
                 ctx.beginPath();
                 ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-                ctx.fillStyle = "#ccc";
+                ctx.fillStyle = "blue";
                 ctx.fill();
                 ctx.closePath();
             }
@@ -95,7 +95,7 @@
             function drawPaddle() {
                 ctx.beginPath();
                 ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleWidth);
-                ctx.fillStyle = "#eee";
+                ctx.fillStyle = "blue";
                 ctx.fill();
                 ctx.closePath();
             }
@@ -110,7 +110,7 @@
                             bricks[c][r].y = brickY;
                             ctx.beginPath();
                             ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                            ctx.fillStyle = 'rgb(200,' + Math.floor(255 - 45 * r) + ', ' + Math.floor(255 - 31 * c) + ')';
+                            ctx.fillStyle = "blue";
                             ctx.fill();
                             ctx.closePath();
                         }
@@ -120,13 +120,13 @@
 
             function drawScore() {
                 ctx.font = "16px Arial";
-                ctx.fillStyle = "#eee";
+                ctx.fillStyle = "#111";
                 ctx.fillText("Score: " + score, 8, 20);
             }
 
             function drawLives() {
                 ctx.font = "16px Arial";
-                ctx.fillStyle = "#eee";
+                ctx.fillStyle = "#111";
                 ctx.fillText("Lives: " + lives, canvas.width-65, 20);
             }
 
