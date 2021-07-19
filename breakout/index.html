@@ -20,8 +20,8 @@
             var x = canvas.width/2;
             var y = canvas.height/2;
             //Ball Speed
-            var dx = 2;
-            var dy = -2;
+            var dx = 4;
+            var dy = -4;
             //Ball Site
             var ballRadius = 10;
             //Paddle Settings
@@ -127,7 +127,7 @@
             function drawLives() {
                 ctx.font = "16px Arial";
                 ctx.fillStyle = "#eee";
-                ctx.fillText("Score: " + lives, canvas.width-65, 20);
+                ctx.fillText("Lives: " + lives, canvas.width-65, 20);
             }
 
             function collisionDetection(){
@@ -169,8 +169,8 @@
                         } else {
                             x = canvas.width/2;
                             y = canvas.height/2;
-                            dx = 2;
-                            dy = -2;
+                            dx = 4;
+                            dy = -4;
                         }
                     }
                 }
