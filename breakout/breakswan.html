@@ -22,6 +22,7 @@
             var lives = 3;
             // Boni Tracker
             var boni = [];
+            boni[0] = "None"
             //Control Settings
             var rightPressed = false;
             var leftPressed = false;
@@ -34,6 +35,8 @@
             var speed = 1;
             //Ball Size
             var ballRadius = 8;
+            //Ball Color
+            var ballColor = "#ccc"
             //Paddle Settings
             var paddleHeight = 10;
             var paddleWidth = 75;
@@ -96,7 +99,7 @@
             function drawBall() {
                 ctx.beginPath();
                 ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-                ctx.fillStyle = "#ccc";
+                ctx.fillStyle = ballColor;
                 ctx.fill();
                 ctx.closePath();
             }
@@ -158,7 +161,23 @@
                                 if (score == brickRowCount * brickColumnCount) {
                                     alert("Wau, du hesch gwunne :)");
                                     document.location.reload();
-                                    }
+                                } else if (score == 15){
+                                    ballColor = "#fa0";
+                                    ballRadius = 12;
+                                    paddleWidth = 50;
+                                    speed = 2;
+                                    boni[0] = "SupraBall";
+                                    drawBall();
+                                    drawPaddle();
+                                } else if (score == 30){
+                                    ballColor = "#f00";
+                                    ballRadius = 6;
+                                    paddleWidth = 100;
+                                    speed = 3;
+                                    boni[0] = "MiniBall";
+                                    drawBall();
+                                    drawPaddle();
+                                }
                             }
                         }
                     }
