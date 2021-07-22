@@ -62,8 +62,12 @@
             document.addEventListener("keydown", keyDownHandler, false);
             document.addEventListener("keyup", keyUpHandler, false);
 
-            //Controls via mouse
+            //Controls via Mouse
             document.addEventListener("mousemove", mouseMoveHandler, false);
+
+            //Controls via Touch
+            document.addEventListener("touchstart", touchHandler);
+            document.addEventListener("touchmove", touchHandler);
 
             function keyDownHandler(e) {
                 if (e.key == "ArrowRight") {
@@ -93,6 +97,20 @@
                 var relativeX = e.clientX - canvas.offsetLeft;
                 if (relativeX > 0 && relativeX < canvas.width) {
                     paddleX = relativeX - paddleWidth/2;
+                }
+            }
+
+            function touchHandler(e) {
+                if (e.touches){
+                    paddleX = e.touches[0].pageX - paddleWidth;
+                    // Slow & Hard - Moving variant
+                    //if (touchX > canvas.width / 2){
+                    //    rightPressed = true;
+                    //    leftPressed = false;
+                    //} else {
+                    //    rightPressed = false;
+                    //    leftPressed = true;
+                    //}
                 }
             }
 
